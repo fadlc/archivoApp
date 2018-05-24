@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Employee</title>
+        <meta charset="UTF-8">
+        <meta name="descrition" content="Employee">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid bg-success">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-3">
+                        <h4><small class="text-primary">Departamento de</small></h4>
+                        <h1 class="text-primary">Archivo</h1>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="text-success">Administrativo</h1>    
+                    </div>
+                    <div class="col-sm-4">
+                        <h3 class="text-success glyphicon glyphicon-ok">Empleado</h3>    
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <br>
+        <!--nav class="nav contenedor">
+           <ul class="menu">
+                <li class="menu__item">
+                    <a class="menu__link" href="../index.html"><span class="menu__icon icon-inicio"></span>Inicio</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link select" href=""><span class="menu__icon icon-nosotros"></span>Nosotros<span class="caret icon-down-open"></span></a>
+                    <ul class="ul__menu">
+                        <li class="li__item"><a class="children__link select" href="#">Nuestra Función</a></li>
+                        <li class="li__item"><a class="children__link" href="estructura_organica.html">Estructura Orgánica</a></li>
+                        <li class="li__item"><a class="children__link" href="tareas.html">Tareas y Actividades</a></li>
+                        <li class="li__item"><a class="children__link" href="equipo.html">El Equipo</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href=""><span class="menu__icon icon-capacitacion"></span>Capacitación<span class="caret icon-down-open"></span></a>
+                    <ul class="ul__menu">
+                        <li class="li__item"><a class="children__link" href="capsulas_educativas.html">Cápsulas Educativas</a></li>
+                        <li class="li__item"><a class="children__link" href="documentos.html">Documentosy Artículos</a></li>
+                    </ul>
+               </li>
+                <li class="menu__item">
+                    <a class="menu__link" href=""><span class="menu__icon icon-eventos"></span>Eventos<span class="caret icon-down-open"></span></a>
+                    <ul class="ul__menu">
+                        <li class="li__item"><a class="children__link" href="charlas.html">Charlas</a></li>
+                        <li class="li__item"><a class="children__link" href="talleres.html">Talleres</a></li>
+                    </ul>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href=""><span class="menu__icon icon-actividades"></span>Galería<span class="caret icon-down-open"></span></a>
+                    <ul class="ul__menu">
+                        <li class="li__item"><a class="children__link" href="#">Fotos</a></li>
+                        <li class="li__item"><a class="children__link" href="#">Videos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav-->
+        <div class= "container alert alert-info">
+           <div class="col-sm-offset-1">
+            <h2>Agregar Empleado</h2>
+            <br>
+            <form class="form-horizontal has-success">
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Código</label>    
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="code">    
+                    </div>
+                    <label class="control-label col-sm-1">Activo</label>    
+                    <div class="col-sm-1">
+                        <input type="checkbox" class="form-control" id="status">    
+                    </div>
+                    <label class="control-label col-sm-1">Foto</label> 
+                    <div class="col-sm-2">
+                        <input type="file" class="form-control" id="photo">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Nombres</label>    
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="firstname1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="firstname2">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Apellidos</label>    
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="lastname1">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="lastname2">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Fecha de Nacimiento</label>    
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" id="birthdate">    
+                    </div>
+                    <label class="control-label col-sm-2">Cédula</label>    
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="identification_card">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Dirección</label>    
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="address">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Teléfono</label>    
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="phone_number">    
+                    </div>
+                    <label class="control-label col-sm-2">Celular</label>    
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="cell_number">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Nivel Educativo</label>    
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="grade">    
+                    </div>
+                    <label class="control-label col-sm-1">Profesión</label>    
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="career">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Cargo</label>    
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="position">    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2">Fecha de Ingreso</label>    
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" id="admission_date">    
+                    </div>
+                    <label class="control-label col-sm-1">Horario</label>    
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="work_shift">    
+                    </div>
+                </div>
+                <div class="form-group">        
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">Agregar</button>
+                    </div>
+                </div>
+            </form>
+            </div>       
+        </div>
+        <br>
+        <div class="container-fluid bg-success">
+            <div class="container">
+                <div>
+                    <p class="text-info text-left">Hospital Materno Infantil de la Comunidad</p>
+                        <p href="#" class=" text-info text-right">&copy;<em>2018-faDLC -- Félix A. De La Cruz</em> -- Mail to:<a href="#"><span class="glyphicon glyphicon-envelope"></span></a></p>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>   
