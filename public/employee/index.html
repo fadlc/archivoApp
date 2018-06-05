@@ -1,0 +1,29 @@
+<div ng-controller="EmployeeListController" class= "container">
+    <h2>Consulta de Empleados</h2>
+    <table class="table">
+       <thead>
+           <tr>
+               <th>FOTO</th>
+               <th>CODIGO</th>
+               <th>NOMBRE</th>
+               <th>POSICION</th>
+               <th>FECHA INGRESO</th>
+               <th>TELEFONO</th>
+               <th>CELULAR</th>
+               <th>TURNO</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr ng-repeat="employee in employees">
+               <td><img ng-src="{{ employee.photo }}" width="70" height="70"></td>
+               <td>{{ employee.code }}</td>
+               <td>{{ employee.firstName }} {{ employee.middleName }} {{ employee.lastName }} {{ employee.secondLastName }}</td>
+               <td>{{ employee.position.description }}</td>
+               <td>{{ employee.admissionDate | date:'dd/MM/yyyy' }}</td>
+               <td>{{ employee.phoneNumber }}</td>
+               <td>{{ employee.cellNumber }}</td>
+               <td>{{ employee.workShift.description }}</td>
+           </tr>
+       </tbody> 
+    </table>       
+</div>
