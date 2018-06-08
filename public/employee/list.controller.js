@@ -1,6 +1,6 @@
 angular.module('archivoApp')
 .controller('EmployeeListController', function($scope, $http){
-    $http.get('/employee/employees')
+    $http.get('/employees')
     .then(function(response) {
         return response.data;  
     })

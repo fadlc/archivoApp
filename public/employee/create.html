@@ -1,97 +1,175 @@
-<div ng-controller="EmployeeCreateController" class="container alert alert-info">
-   <div class="col-sm-offset-1">
+<div ng-controller="EmployeeCreateController" class="container employee-form">
     <h2>Agregar Empleado</h2>
     <br>
-    <form class="form-horizontal has-success" method="post" action="/employee" enctype="multipart/form-data">
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Código</label>    
-            <div class="col-sm-1">
-                <input type="text" class="form-control" ng-model="name">    
+    <form name="form" class="css-form" novalidate>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="code">Código</label>    
+                    <input name="code" type="number" class="form-control form-control-sm" ng-model="employee.code" ng-pattern="/^[0-9]{1,7}$/" required="" >
+                    <div ng-show="form.code.$touched">
+                        <div ng-show="form.code.$error.required">Requerido</div>
+                        <div ng-show="form.code.$error.pattern">Código no válido</div>
+                    </div>    
+                </div>    
             </div>
-            <!--label class="control-label col-sm-1">Activo</label>    
-            <div class="col-sm-1">
-                <input type="checkbox" class="form-control" id="status">    
+            <div class="col-md-2 col-md-offset-3">
+                <div class="form-group">
+                    <label for="photo">Foto</label> 
+                    <input name="photo" type="file" ng-model="employee.photo">
+                </div>    
             </div>
-            <label class="control-label col-sm-1">Foto</label> 
-            <div class="col-sm-2">
-                <input type="file" class="form-control" id="photo">    
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="firstName">Primer Nombre</label>
+                    <input name="firstName" type="text" class="form-control" ng-model="employee.firstName" ng-pattern="/^[a-zA-ZáéíóúAÉÍÓÚÑñ]*$/" required>
+                    <div ng-show="form.firstName.$touched">
+                        <div ng-show="form.firstName.$error.required">Requerido</div>
+                        <div ng-show="form.firstName.$error.pattern">Nombre no válido</div>
+                    </div>   
+                </div>    
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="middleName">Segundo Nombre</label>
+                    <input name="middleName" type="text" class="form-control" ng-model="employee.middleName" ng-pattern="/^[a-zA-ZáéíóúAÉÍÓÚÑñ]*$/">
+                    <div ng-show="form.middleName.$touched">
+                        <div ng-show="form.middleName.$error.pattern">Nombre no válido</div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="lastName">Primer Apellido</label>
+                    <input name="lastName" type="text" class="form-control" ng-model="employee.lastName" ng-pattern="/^[a-zA-ZáéíóúAÉÍÓÚÑñ]*$/" required>
+                    <div ng-show="form.lastName.$touched">
+                        <div ng-show="form.lastName.$error.required">Requerido</div>
+                        <div ng-show="form.lastName.$error.pattern">Apellido no válido</div>
+                    </div>   
+                </div>    
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="secondLastName">Segundo Apellido</label>
+                    <input name="secondLastName" type="text" class="form-control" ng-model="employee.secondLastName" ng-pattern="/^[a-zA-ZáéíóúAÉÍÓÚÑñ]*$/">
+                    <div ng-show="form.secondLastName.$touched">
+                        <div ng-show="form.secondLastName.$error.pattern">Apellido no válido</div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="birthDate">Fecha de Nacimiento</label>    
+                    <input name="birthDate" type="date" class="form-control" ng-model="employee.birthDate" required>
+                    <div ng-show="form.birthDate.$touched">
+                        <div ng-show="form.birthDate.$error.required">Requerido</div>
+                    </div>
+                </div>    
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="idCard">Cédula</label>    
+                    <input name="idCard" type="text" class="form-control" ng-model="employee.idCard" ng-pattern="/^[0-9]{11}$/" required>
+                    <div ng-show="form.idCard.$touched">
+                        <div ng-show="form.idCard.$error.required">Requerido</div>
+                        <div ng-show="form.idCard.$error.pattern">Cédula no válida</div>
+                    </div>
+                </div>    
+            </div>    
+        </div>
+        <div class="form-group">
+            <label for="address">Dirección</label>    
+            <input name="address" type="text" class="form-control" ng-model="employee.address" required>
+            <div ng-show="form.address.$touched">
+                <div ng-show="form.address.$error.required">Requerido</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="phoneNumber">Teléfono</label>    
+                    <input name="phoneNumber" type="text" class="form-control" ng-model="employee.phoneNumber" ng-pattern="/^[0-9]{10}$/" required>
+                    <div ng-show="form.phoneNumber.$touched">
+                        <div ng-show="form.phoneNumber.$error.required">Requerido</div>
+                        <div ng-show="form.phoneNumber.$error.pattern">Teléfono no válido</div>
+                    </div>    
+                </div>    
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="cellNumber">Celular</label>    
+                    <input name="cellNumber" type="text" class="form-control" ng-model="employee.cellNumber" ng-pattern="/^[0-9]{10}$/">
+                    <div ng-show="form.cellNumber.$touched">
+                        <div ng-show="form.cellNumber.$error.pattern">Celular no válido</div>
+                    </div>    
+                </div>    
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="email">Email</label>    
+                    <input name="email" type="email" class="form-control" ng-model="employee.email">
+                    <div ng-show="form.email.$touched">
+                        <div ng-show="form.email.$invalid">Email no válido</div>
+                    </div>   
+                </div>    
+            </div>     
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="grade">Nivel Educativo</label>    
+                    <input name="grade" type="text" class="form-control" ng-model="employee.grade" ng-pattern="/^[a-zA-ZáéíóúAÉÍÓÚÑñ]*$/" required>
+                    <div ng-show="form.grade.$touched">
+                        <div ng-show="form.grade.$error.required">Requerido</div>
+                        <div ng-show="form.grade.$error.pattern">Grade no válido</div>
+                    </div>    
+                </div>    
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="career">Profesión</label>    
+                    <input name="career" type="text" class="form-control" ng-model="employee.career" ng-pattern="/^[a-zA-ZáéíóúAÉÍÓÚÑñ.\ ]*$/">
+                    <div ng-show="form.career.$touched">
+                        <div ng-show="form.career.$error.pattern">Carrera no válida</div>
+                    </div>    
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-md-4">
+                <div class="form-group">
+                    <label for="admissionDate">Fecha de Ingreso</label>    
+                    <input name="admissionDate" type="date" class="form-control" ng-model="employee.admissionDate" required>
+                    <div ng-show="form.admissionDate.$touched">
+                        <div ng-show="form.admissionDate.$error.required">Requerido</div>
+                    </div>    
+                </div>    
+            </div>
+            <!--div class="col-md-4">
+                <div class="form-group">
+                    <label for="position">Cargo</label>    
+                    <input name="position" type="number" class="form-control" ng-model="employee.position" required>
+                    <div ng-show="form.position.$touched">
+                        <div ng-show="form.position.$error.required">Requerido</div>
+                        <div ng-show="form.position.$error.pattern">Posición no válida</div>
+                    </div>    
+                </div>    
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="workShift">Horario</label>    
+                    <input name="workShift" type="number" class="form-control" ng-model="employee.workShift" required>    
+                </div>    
             </div-->
         </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Nombres</label>    
-            <div class="col-sm-3">
-                <input type="text" class="form-control" ng-model="employee.firstName">
-            </div>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" ng-model="employee.middleName">    
-            </div>
-        </div>
-        <!--div class="form-group row">
-            <label class="control-label col-sm-2">Apellidos</label>    
-            <div class="col-sm-3">
-                <input type="text" class="form-control" id="lastName">
-            </div>
-            <div class="col-sm-3">
-                <input type="text" class="form-control" id="secondLastName">    
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Fecha de Nacimiento</label>    
-            <div class="col-sm-2">
-                <input type="date" class="form-control" id="birthDate">    
-            </div>
-            <label class="control-label col-sm-2">Cédula</label>    
-            <div class="col-sm-2">
-                <input type="text" class="form-control" id="identificationCard">    
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Dirección</label>    
-            <div class="col-sm-6">
-                <input type="text" class="form-control" id="address">    
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Teléfono</label>    
-            <div class="col-sm-2">
-                <input type="text" class="form-control" id="phoneNumber">    
-            </div>
-            <label class="control-label col-sm-2">Celular</label>    
-            <div class="col-sm-2">
-                <input type="text" class="form-control" id="cellNumber">    
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Nivel Educativo</label>    
-            <div class="col-sm-2">
-                <input type="text" class="form-control" id="gradeCide">    
-            </div>
-            <label class="control-label col-sm-1">Profesión</label>    
-            <div class="col-sm-3">
-                <input type="text" class="form-control" id="career">    
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Cargo</label>    
-            <div class="col-sm-2">
-                <input type="text" class="form-control" id="position">    
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="control-label col-sm-2">Fecha de Ingreso</label>    
-            <div class="col-sm-2">
-                <input type="date" class="form-control" id="admissionDate">    
-            </div>
-            <label class="control-label col-sm-1">Horario</label>    
-            <div class="col-sm-3">
-                <input type="text" class="form-control" id="workShift">    
-            </div>
-        </div-->
-        <div class="form-group">        
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success">Agregar</button>
-            </div>
-        </div>
+        <button ng-click="addEmployee()" class="btn btn-success" ng-disabled="form.$invalid">Agregar</button>
     </form>
-    </div>       
 </div>
