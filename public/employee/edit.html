@@ -1,7 +1,7 @@
-<div ng-controller="EmployeeCreateController" class="container employee-form">
-    <h2>Agregar Empleado</h2>
+<div ng-controller="EmployeeEditController" class="container employee-form">
+    <h2>Modificar Empleado</h2>
     <br>
-    <form name="form" class="css-form" novalidate>
+    <!--form name="form" class="css-form" novalidate>
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
@@ -18,8 +18,8 @@
                     <label for="photo">Foto</label> 
                     <input name="photo" type="file" ng-model="employee.photo">
                 </div>    
-            </div>
-        </div>
+            </div-->
+        <!--/div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -170,7 +170,7 @@
                 </div>    
             </div-->
         </div>
-        <button ng-click="addEmployee()" class="btn btn-success" ng-disabled="form.$invalid">Agregar</button>
+        <button ng-click="editEmployee()" class="btn btn-success" ng-disabled="form.$invalid">Agregar</button>
     </form>
     <!--script src="mask.js"></script-->
 </div>

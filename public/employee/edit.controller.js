@@ -1,14 +1,16 @@
 angular.module('archivoApp')
-.controller('EmployeeCreateController', function($scope, $http, $location){
-    $scope.employee = {};
+.controller('EmployeeEditController', function($scope, $http, $location){
+    //$scope.employee = {};
+    console.log('Aqui.....');
     
-    $scope.addEmployee =  function() {
-        $http.post('/employees',
+   /* $scope.editEmployee =  function() {
+        //$http.put('/employees/#{employee._id}',
+          //$http.put('/employees/',
         {
-            code: $scope.employee.code,
-            status:$scope.employee.status,
-            photo:$scope.employee.photo,
-            firstName: $scope.employee.firstName,
+            //code: $scope.employee.code,
+            //status:$scope.employee.status,
+            //photo:$scope.employee.photo,
+            /*firstName: $scope.employee.firstName,
             middleName: $scope.employee.middleName,
             lastName: $scope.employee.lastName,
             secondLastName: $scope.employee.secondLastName,
@@ -32,7 +34,7 @@ angular.module('archivoApp')
         .catch(function(err){
             console.log(err);
         })
-    }
+    }*/
 });
 
 

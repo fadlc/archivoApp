@@ -9,6 +9,9 @@ angular.
         when('/employees/create', {
           templateUrl: 'employee/create.html'
         }).
+        when('/employees/edit', {
+          templateUrl: 'employee/edit.html'
+        }).
         otherwise('/employees');
     }
   ]);

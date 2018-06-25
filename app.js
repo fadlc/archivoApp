@@ -26,6 +26,10 @@ app.get('/employees', function(req, res) {
         });
 });
 
+app.get('/employees/edit:_id', function(req, res) {					var id_employee = req.params.id;
+    console.log(id_employee);
+});
+
 app.post('/employees', function(req, res) {
     var data = {
         code: req.body.code,
@@ -50,9 +54,7 @@ app.post('/employees', function(req, res) {
     
     employee.save(function (err) {
         console.log(err);
-        console.log(employee);
         res.sendStatus(200);
-        
     });
 })
 

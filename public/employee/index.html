@@ -3,6 +3,7 @@
     <table class="table">
        <thead>
            <tr>
+               <th>#</th>
                <th>FOTO</th>
                <th>CODIGO</th>
                <th>NOMBRE</th>
@@ -15,6 +16,7 @@
        </thead>
        <tbody>
            <tr ng-repeat="employee in employees">
+               <td>{{ employee._id }}</td>
                <td><img ng-src="{{ employee.photo }}" width="70" height="70"></td>
                <td>{{ employee.code }}</td>
                <td>{{ employee.firstName }} {{ employee.middleName }} {{ employee.lastName }} {{ employee.secondLastName }}</td>
@@ -23,7 +25,8 @@
                <td>{{ employee.phoneNumber }}</td>
                <td>{{ employee.cellNumber }}</td>
                <td>{{ employee.workShift.description }}</td>
+               <td><a class="glyphicon glyphicon-pencil" href="/#!/employees/edit">&nbsp;Modificar</a></td>
            </tr>
-       </tbody> 
+        </tbody>
     </table>       
 </div>
